@@ -31,7 +31,7 @@ class ActiveRecordHelper
 			
 			Yii::$app->db->createCommand('UNLOCK TABLES');
 			
-			$class::get($uid, $create, $attributes);
+			return $class::get($uid, $create, $attributes);
 		}
 		
 		return $model;
