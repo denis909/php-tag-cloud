@@ -1,0 +1,21 @@
+{
+    "name": "denis909/yii2",
+    "keywords": ["yii", "yii2"],
+    "type": "yii2-extension",
+    "authors": [
+        {
+            "name": "denis909",
+            "email": "denis909@mail.ru"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": ">=2.0.5"
+    },
+    "autoload": {
+		"psr-4": {
+			"denis909\\yii\\": ""
+		}
+    }
+}
