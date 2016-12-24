@@ -5,7 +5,7 @@ namespace denis909\yii\helpers;
 class ActiveRecordHelper
 {
 
-	public static function get($class, $col, $uid, $create = FALSE)
+	public static function get($class, $col, $uid, $create = FALSE, $attributes = array())
 	{
 		$model = $class::find()->where([$col => $uid])->one();
 		
@@ -21,14 +21,7 @@ class ActiveRecordHelper
 			$count = $class::find()->where([$col => $uid])->count();
 			
 			if ($count == 0)
-			{
-				$attributes = array();
-			
-				if (is_array($create) != FALSE)
-				{
-					$attributes = $create;
-				}
-				
+			{				
 				$attributes[$attributeName] = $uid;
 			
 				Yii::$app->db->createCommand()->insert($class::tableName(), $attributes)->execute();
