@@ -2,6 +2,8 @@
 
 namespace denis909\yii\helpers;
 
+use Yii;
+
 class ActiveRecordHelper
 {
 
