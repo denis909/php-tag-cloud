@@ -24,7 +24,7 @@ class ActiveRecordHelper
 			
 			if ($count == 0)
 			{				
-				$attributes[$attributeName] = $uid;
+				$attributes[$col] = $uid;
 			
 				Yii::$app->db->createCommand()->insert($class::tableName(), $attributes)->execute();
 			}
