@@ -18,7 +18,7 @@ class ActiveRecordHelper
 				return FALSE;
 			}
 		
-			Yii::$app->db->createCommand('LOCK TABLES '.$class::tableName().' AS t WRITE');
+			Yii::$app->db->createCommand('LOCK TABLES '.$class::tableName().' WRITE')->execute();
 
 			$count = $class::find()->where([$col => $uid])->count();
 			
@@ -29,7 +29,7 @@ class ActiveRecordHelper
 				Yii::$app->db->createCommand()->insert($class::tableName(), $attributes)->execute();
 			}
 			
-			Yii::$app->db->createCommand('UNLOCK TABLES');
+			Yii::$app->db->createCommand('UNLOCK TABLES')->execute();
 			
 			return $class::get($uid, $create, $attributes);
 		}
